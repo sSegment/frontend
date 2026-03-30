@@ -1,32 +1,43 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [data, setData] = useState({ users: [], recipes: [] });
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/test")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((err) => console.error(err));
+    fetch("http://localhost:3000/users/me", {
+      credentials: "include"
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Not authenticated");
+        return res.json();
+      })
+      .then((data) => {
+        // backend returns { status, data }
+        setUser(data.data);
+      })
+      .catch((err) => {
+        console.error(err);
+        setUser(null);
+      })
+      .finally(() => setLoading(false));
   }, []);
+
+  if (loading) return <p>Loading...</p>;
+  console.log("USER OBJECT:", user);
 
   return (
     <div>
-      <h1>Users</h1>
-      <ul>
-        {data.users.map((u) => (
-          <li key={u.id}>{u.name}</li>
-        ))}
-      </ul>
+      <h1>Home</h1>
 
-      <h1>Recipes</h1>
-      <ul>
-        {data.recipes.map((r) => (
-          <li key={r.id}>
-            {r.title} (by {r.author})
-          </li>
-        ))}
-      </ul>
+      {user ? (
+        <div>
+          <h2>Logged in user:</h2>
+          <p>Email: {user.email}</p>
+        </div>
+      ) : (
+        <p>Not logged in</p>
+      )}
     </div>
   );
 }

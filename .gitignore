@@ -1,165 +1,79 @@
-node_modules
-.DS_Store
-.tmp
-tmp
-dist
-coverage
+# Logs
+logs
+*.log
 npm-debug.log*
-yarn.lock
-google-generated-credentials.json
-_START_PACKAGE
+pnpm-debug.log*
+
+# Dependencies
+node_modules
+node_modules/
+
+# Build outputs
+dist
+dist-ssr
+build
+*.tsbuildinfo
+
+# Local env files
 .env
+.env.*
+!.env.example
+
+# Editor directories and files
 .vscode/*
 !.claude
 !.vscode/extensions.json
 !.vscode/settings.default.json
 .idea
-nodelinter.config.json
-**/package-lock.json
-packages/**/.turbo
-.turbo
-*.tsbuildinfo
-.stylelintcache
-*.swp
-CHANGELOG-*.md
-*.mdx
-build-storybook.log
-build.log
-*.junit.xml
-junit.xml
-test-results.json
-*.0x
-packages/testing/playwright/playwright-report
-packages/testing/playwright/test-results
-packages/testing/playwright/.playwright-browsers
-test-results/
-compiled_app_output
-trivy_report*
-compiled
-packages/cli/src/modules/my-feature
-.secrets
-packages/testing/**/.cursor/rules/
-.venv
-.ruff_cache
-__pycache__
-packages/cli/THIRD_PARTY_LICENSES.md
-.coverage
-.nyc_output
-packages/cli/src/commands/export/outputs
-*.bak
-.data
-.data/
-.claude/settings.local.json
-lefthook-local.yml
-
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.swp
 
-
-node_modules
-.DS_Store
+# Temporary files
 .tmp
 tmp
-dist
-coverage
-npm-debug.log*
-yarn.lock
-google-generated-credentials.json
-_START_PACKAGE
-.env
-.vscode/*
-!.claude
-!.vscode/extensions.json
-!.vscode/settings.default.json
-.idea
-nodelinter.config.json
-**/package-lock.json
-packages/**/.turbo
-.turbo
-*.tsbuildinfo
-.stylelintcache
-*.swp
-CHANGELOG-*.md
-*.mdx
-build-storybook.log
-build.log
-*.junit.xml
-junit.xml
-test-results.json
-*.0x
-packages/testing/playwright/playwright-report
-packages/testing/playwright/test-results
-packages/testing/playwright/.playwright-browsers
-test-results/
-compiled_app_output
-trivy_report*
-compiled
-packages/cli/src/modules/my-feature
-.secrets
-packages/testing/**/.cursor/rules/
-.venv
-.ruff_cache
-__pycache__
-packages/cli/THIRD_PARTY_LICENSES.md
-.coverage
-.nyc_output
-packages/cli/src/commands/export/outputs
-*.bak
-.data
-.data/
-.claude/settings.local.json
-lefthook-local.yml
-node_modules/
-
-# Environment files
-.env
-.env.*
-!.env.example
-
-# Prisma generated client output
-/src/generated/prisma/
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Build and coverage
-dist/
-build/
-coverage/
-
-# Runtime/temp files
-tmp/
-temp/
+temp
 *.pid
 *.seed
 
-# OS and editor files
-.DS_Store
-Thumbs.db
-.vscode/
+# Coverage and testing
+coverage
+.nyc_output
+test-results.json
+test-results/
+*.junit.xml
+junit.xml
+
+# Linting and formatting
+.stylelintcache
+nodelinter.config.json
+
+# Prisma
+/src/generated/prisma/
+prisma.config.ts
+
+# Data and temp
+.data
+.data/
+*.local
+*.bak
+
+# Project specific
+/backend
+.secrets
+google-generated-credentials.json
+_START_PACKAGE
+.claude/settings.local.json
+lefthook-local.yml
+
+# Build artifacts
+build.log
+build-storybook.log
+compiled
+compiled_app_output
+trivy_report*
